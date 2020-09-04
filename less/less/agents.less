@@ -1,0 +1,249 @@
+/*
+PADDING IN MOBILE
+*/
+
+.agents-list {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+.agents-list:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.agent-i-col {
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 50px;
+}
+.agent-i {
+	background-color: #fff;
+	box-shadow: 0 6px 18px 0 rgba(51,87,180,0.05);
+	position: relative;
+	padding: 0 38px 40px;
+}
+.agent-i .agent-i-img {
+	display: block;
+	margin: 0 -38px 32px;
+	overflow: hidden;
+	position: relative;
+	border-radius: 4px 4px 0 0;
+}
+.agent-i .agent-i-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.0);
+	transition: background-color 0.3s;
+}
+.agent-i .agent-i-img:hover:before {
+	background-color: rgba(0,0,0,0.1);;
+}
+.agent-i .agent-i-img img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.agent-i .agent-i-img:after {
+	display: block;
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	border-left: 20px solid #ffffff;
+	border-bottom: 15px solid #ffffff;
+	border-right: 20px solid transparent;
+	border-top: 15px solid transparent;
+}
+.agent-i .agent-i-top {
+	padding: 0;
+	position: relative;
+	border-radius: 0 0 3px 3px;
+}
+.agent-i .agent-i-top:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.agent-i .agent-i-type {
+	margin: 0 0 8px;
+	float: left;
+	font-size: 16px;
+	color: @color_hover;
+}
+.agent-i .agent-i-type a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.agent-i .agent-i-type a:hover {
+	color: @color_hover2;
+}
+.agent-i .agent-i-status {
+	float: right;
+	margin: 0 0 8px;
+	font-size: 16px;
+	color: @color_light;
+}
+.agent-i .agent-i-ttl {
+	margin: 0 0 11px;
+	color: @color_primary;
+	letter-spacing: 0.02em;
+	font-size: 25px;
+}
+.agent-i .agent-i-ttl a {
+	color: @color_primary;
+	transition: color 0.2s;
+}
+.agent-i .agent-i-ttl a:hover {
+	color: @color_hover2;
+}
+.agent-i .agent-i-rating {
+	margin: 0 0 17px;
+	font-size: 14px;
+	color: @color_hover2;
+	padding: 0;
+	list-style: none;
+}
+.agent-i .agent-i-rating li {
+	display: inline-block;
+	margin: 0 5px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+}
+.agent-i .agent-i-contacts {
+	margin: 0 0 39px;
+	padding: 0;
+	list-style: none;
+}
+.agent-i .agent-i-contacts li {
+	margin: 0 0 14px;
+	list-style: none;
+	position: relative;
+	padding: 0 0 0 41px;
+	font-size: 16px;
+	color: @color_hover;
+}
+.agent-i .agent-i-contacts li a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.agent-i .agent-i-contacts li a:hover {
+	color: @color_hover2;
+}
+.agent-i .agent-i-contacts-ico {
+	height: 50px;
+	margin: -24px 0 0;
+	position: absolute;
+	width: 16px;
+	left: 0;
+	top: 50%;
+}
+.agent-i .agent-i-contacts-ico img {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+.agent-i .agent-i-contacts-ico:after {
+	height: 100%;
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+}
+.agent-i .agent-i-call {
+	position: absolute;
+	border-radius: 0 0 3px 3px;
+	bottom: 0;
+	padding: 15px 15px;
+	left: 0;
+	right: 0;
+	letter-spacing: 0.04em;
+	text-align: center;
+	font-weight: 500;
+	font-size: 14px;
+	color: #ffffff;
+	text-transform: uppercase;
+	background-color: @color_hover;
+	transition: background-color 0.2s;
+	display: block;
+	box-shadow: 0 6px 18px 0 rgba(51,87,180,0.2);
+}
+.agent-i .agent-i-call:hover {
+	background-color: lighten(@color_hover, 5%);
+}
+
+
+
+
+@media only screen and (max-width : 1229px) {
+	.agents-list {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.agent-i-col {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.agent-i {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.agent-i .agent-i-img {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	.agent-i {
+		padding-left: 38px;
+		padding-right: 38px;
+	}
+	.agent-i .agent-i-img {
+		margin-left: -38px;
+		margin-right: -38px;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.agent-i {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.agent-i .agent-i-img {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+}
+
+@media only screen and (max-width : 599px) {
+	.agent-i {
+		padding-left: 38px;
+		padding-right: 38px;
+	}
+	.agent-i-col {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 365px;
+		width: auto;
+	}
+	.agent-i .agent-i-img {
+		margin-left: -38px;
+		margin-right: -38px;
+	}
+}
+
+
+
+
+
+
+

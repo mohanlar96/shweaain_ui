@@ -1,0 +1,90 @@
+
+.page-full-height {
+	position: relative;
+}
+.page-full-height .map-full {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 115px;
+}
+.page-full-height .map-full #map-full {
+	height: 100%;
+}
+.page-full-height .map-full-cont {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+.map-full-cont .search2 {
+	margin: 0 0 -30px;
+}
+.map-full-cont .search2-submit input[type=submit] {
+	padding: 62px 15px 32px;
+	background-color: @color_hover2;
+	height: 115px;
+}
+.map-full-cont .search2-submit input[type=submit]:hover {
+	background-color: lighten(@color_hover2, 5%);
+}
+
+
+
+
+.map-full .prop-i {
+	padding: 5px 28px 60px;
+	position: relative;
+	background-color: #fff;
+	font-weight: 400;
+}
+.map-full .prop-i .prop-i-img {
+	display: block;
+	margin: 0 -28px 30px;
+	overflow: hidden;
+	position: relative;
+}
+.map-full .prop-i .prop-i-img:after {
+	display: block;
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	border-left: 15px solid #ffffff;
+	border-bottom: 20px solid #ffffff;
+	border-right: 15px solid transparent;
+	border-top: 20px solid transparent;
+}
+.map-full .prop-i .prop-i-img img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.map-full .prop-i .prop-i-infolist {
+	margin: 0 0 25px;
+}
+.map-full .prop-i .prop-i-infolist li {
+	display: inline-block;
+	color: #3357b4;
+	font-size: 16px;
+	width: 33.33333%;
+	padding-right: 5px;
+}
+.map-full .prop-i .prop-i-infolist li .prop-i-info-icon {
+	display: inline-block;
+	margin: 2px 10px 0 0;
+	vertical-align: middle;
+}
+.map-full .prop-i .prop-i-bottom {
+	left: 28px;
+	right: 28px;
+}
+.map-full .prop-i .prop-i-price {
+	margin: 0 0 11px;
+}
+.map-full .prop-i .prop-i-type {
+	margin: 1px 10px 10px 0;
+}
+

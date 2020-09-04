@@ -1,0 +1,264 @@
+.agent-detail {
+	position: relative;
+	padding: 0 0 0 48%;
+	margin-bottom: 60px;
+	margin-top: 27px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+.agent-detail:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.agent-detail .agent-detail-img {
+	border-radius: 3px 0 0 3px;
+	position: absolute;
+	left: 0;
+	right: 52%;
+	top: 0;
+	bottom: 0;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+.agent-detail .agent-detail-img img {
+	display: none;
+	width: 100%;
+	height: auto;
+	border-radius: 3px 3px 0 0;
+}
+.agent-detail .agent-detail-img:after {
+	display: block;
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	border-right: 15px solid #ffffff;
+	border-top: 20px solid #ffffff;
+	border-left: 15px solid transparent;
+	border-bottom: 20px solid transparent;
+}
+.agent-detail .agent-detail-cont {
+	padding: 33px 40px 1px;
+}
+.agent-detail .agent-detail-type {
+	margin: 0 0 11px;
+	font-size: 16px;
+	color: @color_hover;
+}
+.agent-detail .agent-detail-type a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.agent-detail .agent-detail-type a:hover {
+	color: @color_hover2;
+}
+.agent-detail .agent-detail-ttl {
+	font-size: 30px;
+	margin: 0 0 15px;
+	color: @color_primary;
+}
+.agent-detail .agent-detail-rating {
+	margin: 0 0 26px;
+	font-size: 14px;
+	color: @color_hover2;
+	padding: 0;
+	list-style: none;
+}
+.agent-detail .agent-detail-rating li {
+	display: inline-block;
+	margin: 0 5px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+}
+.agent-detail .agent-detail-info {
+	overflow: hidden;
+	margin: 0 0 15px;
+}
+.agent-detail .agent-detail-info dt {
+	float: left;
+	width: 39%;
+	padding: 3px 10px 0 30px;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: @color_light;
+	position: relative;
+	margin: 0 0 18px;
+	clear: left;
+}
+.agent-detail .agent-detail-info dt .agent-detail-info-icon {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 30px;
+	margin: -14px 0 0;
+	display: block;
+	width: 16px;
+	text-align: center;
+}
+.agent-detail .agent-detail-info dt .agent-detail-info-icon:after {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.agent-detail .agent-detail-info dt .agent-detail-info-icon img {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+.agent-detail .agent-detail-info dd {
+	float: left;
+	width: 61%;
+	color: @color_hover;
+	margin: 0 0 17px;
+	font-size: 16px;
+}
+.agent-detail .agent-detail-info a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.agent-detail .agent-detail-info a:hover {
+	color: @color_hover2;
+}
+.agent-detail .agent-detail-bottom {
+	border-top: 1px solid #e1e4ed;
+	padding: 0 0 8px;
+}
+.agent-detail .agent-detail-bottom:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.agent-detail .agent-detail-social {
+	float: left;
+	width: 55%;
+	list-style: none;
+	padding: 0;
+	margin: 23px 5% 0 0;
+}
+.agent-detail .agent-detail-social li {
+	display: inline-block;
+	font-size: 22px;
+	margin: 0 43px 15px 0;
+}
+.agent-detail .agent-detail-social li:last-child {
+	margin-right: 0;
+}
+.agent-detail .agent-detail-social li a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.agent-detail .agent-detail-social li a:hover {
+	color: @color_hover2;
+}
+.agent-detail .agent-detail-call {
+	width: 40%;
+	float: left;
+	margin: 19px 0 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.agent-about {
+	background-color: #fff;
+	padding: 33px 50px 5px;
+	margin-bottom: 60px;
+	border-radius: 3px;
+	color: #858d9b;
+}
+.agent-about .agent-about-ttl {
+	font-size: 40px;
+	color: #767e8d;
+	margin: 0 0 23px;
+	font-weight: 400;
+	letter-spacing: 0.03em;
+}
+.agent-about .agent-about-ttl b {
+	color: #767e8d;
+}
+
+
+
+@media only screen and (max-width : 1229px) {
+	.agent-detail .agent-detail-social li {
+		margin-right: 38px;
+	}
+}
+
+@media (min-width : 768px) and (max-width : 991px) {
+	.agent-detail .agent-detail-social {
+		width: 100%;
+		margin: 23px 0 0 0;
+	}
+	.agent-detail .agent-detail-call {
+		width: 100%;
+		margin: 2px 0 22px;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.agent-detail {
+		padding: 0;
+	}
+	.agent-detail .agent-detail-img {
+		border-radius: 0;
+		position: relative;
+		left: auto;
+		right: auto;
+		top: auto;
+		bottom: auto;
+		background-image: initial !important;
+	}
+	.agent-detail .agent-detail-img img {
+		display: block;
+	}
+	.agent-detail .agent-detail-img:after {
+		top: auto;
+		right: auto;
+		bottom: 0;
+		left: 0;
+		border-left: 20px solid #ffffff;
+		border-bottom: 15px solid #ffffff;
+		border-right: 20px solid transparent;
+		border-top: 15px solid transparent;
+	}
+	.agent-detail .agent-detail-cont {
+		padding: 33px 40px 1px;
+	}
+}
+
+@media only screen and (max-width : 599px) {
+	.agent-detail .agent-detail-social {
+		width: 100%;
+		margin: 23px 0 0 0;
+	}
+	.agent-detail .agent-detail-call {
+		width: 100%;
+		margin: 2px 0 22px;
+	}
+}
+
+@media only screen and (max-width : 419px) {
+	.agent-detail .agent-detail-info dt {
+		width: 100%;
+		margin: 0 0 5px;
+	}
+	.agent-detail .agent-detail-info dd {
+		width: 100%;
+		margin: 0 0 17px 30px;
+	}
+	.agent-about {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	.agent-about .agent-about-ttl {
+		font-size: 32px;
+	}
+}

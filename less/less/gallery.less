@@ -1,0 +1,284 @@
+ul.gallery-grid {
+	margin: 0 -20px 30px;
+	position: relative;
+	list-style: none;
+}
+.gallery-grid:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+.gallery-grid li {
+	/*width: 33.33333333%;*/
+	margin: 0;
+	/*float: left;
+	padding: 0;*/
+	position: relative;
+	list-style: none !important;
+	padding: 0 20px 40px;
+}
+.gallery-grid li .gallery-grid-inner > a.fancy-img {
+	display: block;
+	padding: 0;
+	transition: all 0.3s ease-in-out;
+	height: 100%;
+	border: none;
+	position: relative;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.gallery-grid li a img {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+.gallery-grid li .gallery-grid-inner > a.fancy-img:after {
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	content: '';
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	transition: all 0.6s;
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	transition: opacity 0.6s;
+}
+.gallery-grid li .gallery-grid-inner:hover > a.fancy-img:after {
+	opacity: 1;
+}
+.gallery-grid li .gallery-grid-inner > a.fancy-img:before {
+	transition: all 0.4s;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -25px 0 0 -25px;
+	font-size: 24px;
+	text-align: center;
+	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	z-index: 2;
+	font-size: 40px;
+	font-weight: 700;
+	content: "";
+	opacity: 0;
+	border-radius: 80px;
+}
+.gallery-grid li .gallery-grid-inner > a.fancy-img.gallery-grid-video:before {
+	content: "\f04b";
+	opacity: 1;
+	font-size: 22px;
+	font-weight: normal;
+	font-family: FontAwesome;
+	padding: 0 0 0 6px;
+	background: rgba(255,255,255,0.95);
+	color: #3357b4;
+}
+.gallery-grid .gallery-grid-inner {
+	position: relative;
+}
+.gallery-grid .gallery-grid-btns {
+	position: absolute;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	opacity: 0;
+	z-index: 3;
+	transition: opacity 0.6s;
+}
+.gallery-grid .gallery-grid-btns:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.gallery-grid .gallery-grid-inner:hover .gallery-grid-btns {
+	opacity: 1;
+}
+.gallery-grid .gallery-grid-inner .gallery-grid-print {
+	display: block;
+	float: left;
+	padding: 13px 0 0;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 15px;
+	color: #1d253f;
+	width: 54px;
+	height: 45px;
+	background-color: #fff;
+	box-shadow: 0 6px 18px 0 rgba(96, 96, 96, 0.2);
+	transition: background-color 0.2s;
+	border: none;
+	margin: 0 15px 0 0;
+}
+.gallery-grid .gallery-grid-inner .gallery-grid-print:hover {
+	background-color: #edeff2;
+}
+.gallery-grid .gallery-grid-inner .gallery-grid-zoom {
+	display: block;
+	float: right;
+	padding: 13px 21px 0;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 15px;
+	color: #1d253f;
+	height: 45px;
+	background-color: #fff;
+	box-shadow: 0 6px 18px 0 rgba(96, 96, 96, 0.2);
+	transition: background-color 0.2s;
+	border: none;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+}
+.gallery-grid .gallery-grid-inner .gallery-grid-zoom:hover {
+	background-color: #edeff2;
+}
+.gallery-grid .gallery-grid-inner .gallery-grid-zoom .fa {
+	margin: 0 0 4px 4px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.gallery-grid-share {
+	float: left;
+	display: block;
+	text-align: center;
+	color: #1e243f;
+	font-size: 15px;
+	position: relative;
+}
+.gallery-grid-share .gallery-grid-share-btn {
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 6px 18px 0 rgba(96,96,96,0.2);
+	transition: background-color 0.2s;
+	border-radius: 2px;
+	display: block;
+	width: 54px;
+	height: 45px;
+	border: none;
+	padding: 13px 0 0;
+	color: #1e243f;
+}
+.gallery-grid-share .gallery-grid-share-btn:hover {
+	background-color: #edeff2;
+}
+.gallery-grid-share-list {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+
+	padding: 0 0 10px;
+	list-style: none;
+	z-index: 2;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	-webkit-transform: translate3d(0, 10px, 0);
+	-moz-transform: translate3d(0, 10px, 0);
+	-ms-transform: translate3d(0, 10px, 0);
+	-o-transform: translate3d(0, 10px, 0);
+	transform: translate3d(0, 10px, 0);
+	visibility: hidden;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.gallery-grid-share:hover .gallery-grid-share-list {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0px, 0);
+	-moz-transform: translate3d(0, 0px, 0);
+	-ms-transform: translate3d(0, 0px, 0);
+	-o-transform: translate3d(0, 0px, 0);
+	transform: translate3d(0, 0px, 0);
+	visibility: visible;
+	width: auto;
+	height: auto;
+	overflow: initial;
+}
+.gallery-grid-share-list ul {
+	margin: 0;
+	box-shadow: 0 15px 50px 0 rgba(181, 204, 235, 0.5);
+	background-color: #fff;
+	border-radius: 3px;
+	font-size: 16px;
+	color: #323946;
+}
+.gallery-grid-share-list li {
+	display: block;
+	padding: 0;
+	border-radius: 0;
+}
+.gallery-grid-share-list li a {
+	display: block;
+	padding: 10px 0;
+	border-bottom: 1px solid #e1e5ee;
+	font-size: 14px;
+	color: #323946;
+	transition: background-color 0.2s;
+}
+.gallery-grid-share-list li a:hover {
+	background-color: #f3f4f7;
+	border-bottom: 1px solid #e1e5ee;
+}
+.gallery-grid-share-list li:last-child a {
+	border: none;
+}
+.gallery-grid-share-list li:last-child a:hover {
+	border: none;
+}
+
+p.gallery-grid-more {
+	font-size: 14px;
+	text-transform: uppercase;
+	display: block;
+	margin: -30px 0 50px;
+	padding: 0;
+	text-align: center;
+}
+p.gallery-grid-more a {
+	font-weight: 500;
+	display: block;
+	color: #8b95b7;
+	border: none;
+	transition: all 0.2s;
+	background-color: #dfe2ec;
+	border-radius: 3px;
+	padding: 23px 15px;
+	letter-spacing: 0.04em;
+}
+p.gallery-grid-more a:hover {
+	background-color: #d3d6e0;
+}
+p.gallery-grid-more a.loading {
+	opacity: 0.4;
+	cursor: default;
+	border-bottom: 1px dotted #868ca7;
+}
+
+
+@media only screen and (max-width: 767px) {
+	ul.gallery-grid {
+		margin: 0 -8px 30px;
+	}
+	.gallery-grid li {
+		padding: 0 8px 16px;
+	}
+}
+@media only screen and (max-width: 599px) {
+	ul.gallery-grid {
+		margin: 0 0 30px;
+	}
+	.gallery-grid li {
+		padding: 0 0 30px;
+		width: 100%;
+	}
+}

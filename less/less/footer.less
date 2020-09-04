@@ -1,0 +1,130 @@
+.site-footer {
+	background-color: #ffffff;
+}
+.site-footer .footer-top {
+	padding-bottom: 34px;
+}
+.site-footer .footer-top:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.site-footer .f-logo {
+	margin: 70px 0 0;
+	font-size: 16px;
+	color: @color_light;
+}
+.site-footer .f-logo img {
+	display: block;
+	margin: 0;
+}
+.site-footer .f-logo p {
+	margin: 10px 0 0;
+}
+.site-footer .f-menu {
+	margin: 45px 0 0;
+}
+.site-footer .f-menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.site-footer .f-menu ul li {
+	font-size: 16px;
+	color: #252940;
+	margin: 0 0 18px;
+	list-style: none;
+	padding: 0;
+}
+.site-footer .f-menu ul li a {
+	transition: color 0.2s;
+	color: #252940;
+}
+.site-footer .f-menu ul li a:hover {
+	color: @color_hover2;
+}
+.site-footer .footer-bottom {
+	border-top: 1px solid #e1e4ed;
+	padding: 0 0 23px;
+}
+.site-footer .social-links {
+	margin: 34px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.social-links li {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 54px 10px 0;
+	font-size: 20px;
+}
+.social-links li:last-child {
+	margin-right: 0;
+}
+.social-links li a {
+	color: @color_hover;
+	transition: color 0.2s;
+}
+.social-links li a:hover {
+	color: @color_hover2;
+}
+.footer-bottom .f-copyright {
+	text-align: center;
+	font-size: 16px;
+	color: @color_light;
+	margin: 35px 0 0;
+}
+.footer-bottom .f-callback {
+	text-align: right;
+	margin: 27px 0 0;
+}
+.footer-bottom .f-bottom-logo {
+	color: #838e9d;
+	margin: 27px 0 0;
+}
+.footer-bottom .f-bottom-logo a {
+	transition: color 0.2s;
+}
+.footer-bottom .f-bottom-logo a:hover {
+	color: @color_hover;
+}
+.footer-bottom .btn1 {
+
+}
+.footer-bottom .btn1:hover {
+
+}
+
+@media only screen and (max-width : 991px) {
+	.social-links li {
+		margin: 0 40px 10px 0;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.site-footer .footer-top {
+		text-align: center;
+	}
+	.site-footer .f-logo img {
+		display: inline-block;
+	}
+	.site-footer .footer-bottom {
+		padding: 0 0 35px;
+	}
+	.footer-bottom .f-callback,
+	.site-footer .footer-bottom {
+		text-align: center;
+	}
+	.footer-bottom .f-copyright {
+		margin: 10px 0 0;
+	}
+}
+
+@media only screen and (max-width : 479px) {
+	.site-footer .f-menu {
+		width: 50%;
+	}
+	.site-footer .f-menu:nth-of-type(2n) {
+		clear: left;
+	}
+}

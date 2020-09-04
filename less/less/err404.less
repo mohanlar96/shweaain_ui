@@ -1,0 +1,120 @@
+.err404 {
+	text-align: center;
+	padding-top: 92px;
+}
+.err404 .err404-img {
+	display: block;
+	margin: 0 auto 9px;
+	font-size: 180px;
+	line-height: 1;
+	font-weight: 900;
+	font-family: Montseratt, sans-serif;
+	letter-spacing: 0.05em;
+}
+.err404 p.err404-img {
+	margin: 0 auto 60px;
+}
+.err404 h1 {
+	font-weight: 500;
+	font-size: 24px;
+	margin: 0 0 75px;
+	letter-spacing: 0.02em;
+	color: @color_light2;
+}
+.err404 form {
+	margin: 0 auto 70px;
+	position: relative;
+	max-width: 480px;
+}
+.err404 form input[type=text] {
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #e1e5ee;
+	transition: border-color 0.2s;
+	font-size: 16px;
+	color: #838e9d;
+	padding: 0;
+	height: 40px;
+}
+.err404 form input[type=text]::-webkit-input-placeholder {
+	color: @color_light;
+}
+.err404 form input[type=text]::-moz-placeholder {
+	color: @color_light;
+	opacity: 1;
+}
+.err404 form input[type=text]:-ms-input-placeholder {
+	color: @color_light;
+}
+.err404 form input[type=text]:focus {
+	border-color: #d5d9e0;
+}
+.err404 form button {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0 15px;
+	min-width: 120px;
+	text-align: center;
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: background-color 0.2s;
+	cursor: pointer;
+	background-color: @color_hover;
+	border: none;
+	height: 40px;
+}
+.err404 form button:before {
+	display: block;
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: -20px;
+	border-right: 10px solid @color_hover;
+	border-bottom: 20px solid @color_hover;
+	border-left: 10px solid transparent;
+	border-top: 20px solid transparent;
+	transition: border-color 0.2s;
+}
+.err404 form button:after {
+	display: block;
+	position: absolute;
+	content: '';
+	bottom: 0;
+	right: -20px;
+	border-left: 10px solid @color_hover;
+	border-top: 20px solid @color_hover;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid transparent;
+	transition: border-color 0.2s;
+}
+.err404 form button:hover {
+	background-color: @color_hover2;
+}
+.err404 form button:hover:after {
+	border-left: 10px solid @color_hover2;
+	border-top: 20px solid @color_hover2;
+}
+.err404 form button:hover:before {
+	border-right: 10px solid @color_hover2;
+	border-bottom: 20px solid @color_hover2;
+}
+
+
+@media only screen and (max-width : 479px) {
+	.err404 form input[type=text] {
+		margin: 0 0 20px;
+	}
+	.err404 form button {
+		position: relative;
+		top: auto;
+		bottom: auto;
+		right: auto;
+		margin: 0 auto;
+	}
+}
