@@ -3,11 +3,11 @@ $( document ).ready(function() {
   var token = getTokenFromCache();
   var authorization = "";
   if (token) {
-    var authorization = "Bearer " + token;
+    authorization = "Bearer " + token;
   }
 
   if (!authorization) {
-    // redirect to login
+    document.location = 'login.html';
   }
 
   //Updated on May 29, 2017 at 3:42 pm

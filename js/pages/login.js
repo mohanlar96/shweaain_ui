@@ -31,5 +31,7 @@ function loginUser() {
     }
     var token = response.access_token;
     insertTokenToCache(token);
+
+    document.location = '/index-detailed.html';
   });
 }
