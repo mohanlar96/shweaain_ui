@@ -18,8 +18,6 @@ function loginUser() {
     method: "POST",
     url: api + "oauth/token",
     data: data,
-    crossDomain: true,
-    dataType: 'json',
     headers: {"Accept":"application/json",
       "Content-Type": "application/x-www-form-urlencoded",
       "Access-Control-Allow-Origin": '*',

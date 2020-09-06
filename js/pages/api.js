@@ -1,4 +1,4 @@
-var api = "http://8dd7643991a6.ngrok.io/";
+var api = "http://ca1e0361ab35.ngrok.io/";
 
 function insertTokenToCache(token) {
   localStorage['token'] = token;
