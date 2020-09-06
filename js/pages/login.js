@@ -15,13 +15,11 @@ function loginUser() {
   };
 
   $.ajax({
-    method: "POST",
-    url: api + "oauth/token",
+    method: "GET",
+    url: api + "api/test", // "oauth/token", //"api/test",
     data: data,
-    headers: {"Accept":"application/json",
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Access-Control-Allow-Origin": '*',
-      "Access-Control-Allow-Credentials": true
+    headers: {
+      "Accept": "application/json"
     }
   }).done(function( response ) {
     if(!response){
@@ -30,6 +28,6 @@ function loginUser() {
     var token = response.access_token;
     insertTokenToCache(token);
 
-    document.location = '/index-detailed.html';
+    document.location = 'index-detailed.html';
   });
 }
