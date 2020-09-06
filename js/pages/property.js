@@ -1,5 +1,15 @@
 $( document ).ready(function() {
 
+  var token = getTokenFromCache();
+  var authorization = "";
+  if (token) {
+    var authorization = "Bearer " + token;
+  }
+
+  if (!authorization) {
+    // redirect to login
+  }
+
   //Updated on May 29, 2017 at 3:42 pm
   var monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -12,7 +22,12 @@ $( document ).ready(function() {
   if (!id){
     id = 0;
   }
-  $.get( api + "house/" + id, function( house ) {
+
+  $.ajax({
+    method: "GET",
+    url: api + "house",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( house ) {
     if (!house) {
 
       $('#image').prop("src", house.imageUrl);

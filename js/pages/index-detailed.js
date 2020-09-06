@@ -1,21 +1,51 @@
 $( document ).ready(function() {
-  $.get( api + "rating/total", function( data ) {
+  var token = getTokenFromCache();
+  var authorization = "";
+  if (token) {
+    var authorization = "Bearer " + token;
+  }
+
+  if (!authorization) {
+    // redirect to login
+  }
+
+  $.ajax({
+    method: "GET",
+    url: api + "rating/total",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $( "#total-rating" ).html( data );
   });
 
-  $.get( api + "house/total", function( data ) {
+  $.ajax({
+    method: "GET",
+    url: api + "house/total",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $( "#total-house" ).html( data );
   });
 
-  $.get( api + "client/total", function( data ) {
+  $.ajax({
+    method: "GET",
+    url: api + "client/total",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $( "#total-client" ).html( data );
   });
 
-  $.get( api + "transaction/total", function( data ) {
+  $.ajax({
+    method: "GET",
+    url: api + "transaction/total",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $( "#total-transaction" ).html( data );
   });
 
-  $.get( api + "city", function( data ) {
+  $.ajax({
+    method: "GET",
+    url: api + "city",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $("#city").html("<option value='0'>All</option>")
     if (data) {
       data.forEach(function(city) {
@@ -25,7 +55,11 @@ $( document ).ready(function() {
     }
   });
 
-  $.get( api + "apartment",function (data) {
+  $.ajax({
+    method: "GET",
+    url: api + "apartment",
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function( data ) {
     $("#house-type").html("<option value='0'>All</option>")
     if (data) {
       data.forEach(function(houseType) {
@@ -40,6 +74,12 @@ $( document ).ready(function() {
 });
 
 function search() {
+  var token = getTokenFromCache();
+  var authorization = "";
+  if (token) {
+    authorization = "Bearer " + token;
+  }
+
   var city = $('#city').val(); // fairfield
   var houseType = $('#house-type').val(); // Apartment, Flat, House, Villa
   var numberOfBedRoom = $('#number-of-bed-room input[type=radio]:checked').val(); // 1 2 3 4 5
@@ -114,7 +154,13 @@ function search() {
     outdoorShower: outdoorShower
   }
 
-  $.get(api + "house/search", filterData, function (data) {
+  $.ajax({
+    method: "GET",
+    url: api + "house/search",
+    data: filterData,
+    headers: {"Accept":"application/json", "Authorization": authorization}
+  }).done(function (data) {
+
     if (data) {
 
       $("#btn-total-result").val("Show " + data.length + " Results");
