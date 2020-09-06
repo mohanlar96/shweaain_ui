@@ -1,4 +1,3 @@
-var api = "http://75c151037c03.ngrok.io/shweaain/public/";
 $( document ).ready(function() {
   $.get( api + "rating/total", function( data ) {
     $( "#total-rating" ).html( data );
