@@ -26,8 +26,7 @@
 <header class="site-header1-wrap">
     <div class="container site-header1">
         <a href="index-detailed.html" class="h-logo">
-            <img src="img/logo.png" alt="Powerful Real Estate Theme">
-            <p>Powerful Real Estate Theme</p>
+            <img src="img/logo_Shweaain_Final.png" alt="Powerful Real Estate Theme">
         </a><!--
         NO SPACE
         --><ul class="h-contacts"><!--
@@ -108,7 +107,7 @@
     </nav>
 </div>
 <div class="container prop-b-crumbs">
-    <time datetime="2017-12-14 20:00" class="prop-date">Updated on May 29, 2017 at 3:42 pm</time>
+    <time datetime="2017-12-14 20:00" class="prop-date" id="update-time">Updated on May 29, 2017 at 3:42 pm</time>
     <ul class="b-crumbs">
         <li><a href="index-detailed.html">Home</a></li>
         <li>Single Property</li>
@@ -118,55 +117,13 @@
 <div class="container">
     <div class="prop-wrap">
         <div class="swiper-container prop-slider">
-            <div class="swiper-container prop-slider-top">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1350x900" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1350x900" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1349x900" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1307x900" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1350x900" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/720x480)">
-                        <img src="http://placehold.it/720x480" alt="">
-                        <a href="http://placehold.it/1500x985" class="fancy-img prop-slider-top-zoom" data-fancybox-group="prop-slider-top">Zoom</a>
-                    </div>
-                </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-                <div class="swiper-pagination"></div>
-            </div>
-            <div class="swiper-container prop-slider-thumbs">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                    <div class="swiper-slide" style="background-image:url(http://placehold.it/150x100)"></div>
-                </div>
-            </div>
+            <img src="http://placehold.it/720x480" alt="" id="image">
         </div>
         <div class="prop-cont">
-            <p class="prop-main-loc"><a href="catalog-grid.html">Madrid</a>, <a href="catalog-grid.html">Spain</a></p>
-            <h1 class="prop-main-ttl">Comfortable Apartments 15 Sqrt</h1>
+            <p class="prop-main-loc" id="city">Madrid, Spain</p>
+            <h1 class="prop-main-ttl" id="house-type-feet">Comfortable Apartments 15 Sqrt</h1>
             <div class="prop-main-rating">
-                <ul>
+                <ul id="rating-star">
                     <li><i class="ion-android-star"></i></li>
                     <li><i class="ion-android-star"></i></li>
                     <li><i class="ion-android-star"></i></li>
@@ -179,47 +136,37 @@
                     <span class="prop-i-info-icon"><img src="img/ico-status.png" alt=""></span>
                     Status
                 </dt>
-                <dd><a href="catalog-grid.html">For Rent</a></dd>
+                <dd id="status">For Rent</dd>
                 <dt>
                     <span class="prop-i-info-icon"><img src="img/ico-area.png" alt=""></span>
                     Square Feet
                 </dt>
-                <dd><a href="catalog-grid.html">1500</a></dd>
+                <dd id="square-feet">1500</dd>
                 <dt>
                     <span class="prop-i-info-icon"><img src="img/ico-bed.png" alt=""></span>
                     Beds
                 </dt>
-                <dd><a href="catalog-grid.html">4</a></dd>
+                <dd id="number-of-bed">4</dd>
                 <dt>
                     <span class="prop-i-info-icon"><img src="img/ico-price.png" alt=""></span>
                     Price
                 </dt>
-                <dd><a href="catalog-grid.html">$1600</a></dd>
+                <dd id="price">$1600</dd>
                 <dt>
                     <span class="prop-i-info-icon"><img src="img/ico-type.png" alt=""></span>
                     Type
                 </dt>
-                <dd><a href="catalog-grid.html">Apartment</a></dd>
-                <dt>
-                    <span class="prop-i-info-icon"><img src="img/ico-garage.png" alt=""></span>
-                    Garage SqFt
-                </dt>
-                <dd><a href="catalog-grid.html">2 / 200</a></dd>
+                <dd id="house-type">Apartment</dd>
                 <dt>
                     <span class="prop-i-info-icon"><img src="img/ico-bath.png" alt=""></span>
                     Baths
                 </dt>
-                <dd><a href="catalog-grid.html">2</a></dd>
-                <dt>
-                    <span class="prop-i-info-icon"><img src="img/ico-user.png" alt=""></span>
-                    Guests
-                </dt>
-                <dd><a href="catalog-grid.html">3</a></dd>
+                <dd id="number-of-bath">2</dd>
             </dl>
             <div class="prop-cont-bottom">
                 <div class="prop-main-price-wrap">
                     <p class="prop-main-price-label">Price</p>
-                    <p class="prop-main-price"><span class="prop-main-price-val">$1800</span> <span class="prop-main-price-currency">/ month</span></p>
+                    <p class="prop-main-price"><span class="prop-main-price-val" id="price-final">$1800</span> <span class="prop-main-price-currency">/ month</span></p>
                 </div>
                 <div class="prop-cont-buttons">
                     <a href="#" class="prop-wishlist"><i class="fa fa-heart"></i></a>
@@ -267,66 +214,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container prop-agent-wrap">
-    <div class="prop-agent">
-        <p>Agent</p>
-        <h3><a href="agent.html">Mark Duncan</a></h3>
-        <a href="agent.html"><img src="http://placehold.it/80x80" alt=""></a>
-    </div>
-    <a href="#" class="modalform-btn btn1 prop-callback">Get direction</a>
-</div>
-
-<div class="container cont-boxed prop-atts-wrap-boxed">
-    <div class="prop-atts-wrap">
-        <div class="prop-atts">
-            <h3>Room Dimensions</h3>
-            <dl>
-                <dt>Interior Size</dt>
-                <dd>2500 Sq Ft</dd>
-                <dt>Bedrooms</dt>
-                <dd>4</dd>
-                <dt>Bathrooms</dt>
-                <dd>3</dd>
-                <dt>Garage</dt>
-                <dd>3 car</dd>
-                <dt>Laundry Room</dt>
-                <dd>Washer / Dryer</dd>
-            </dl>
-        </div>
-        <div class="prop-atts">
-            <h3>Exterior Details</h3>
-            <dl>
-                <dt>Lot Size</dt>
-                <dd>0.5 Acres</dd>
-                <dt>Roof</dt>
-                <dd>Partial Tile Roof</dd>
-                <dt>Sewer</dt>
-                <dd>Connected</dd>
-                <dt>Construction</dt>
-                <dd>Frame / Wood</dd>
-                <dt>Cooling</dt>
-                <dd>Electric Air</dd>
-            </dl>
-        </div>
-        <div class="prop-atts">
-            <h3>Room Proportions</h3>
-            <dl>
-                <dt>Living Room</dt>
-                <dd>29×18</dd>
-                <dt>Dining Room</dt>
-                <dd>12×11</dd>
-                <dt>Kitchen</dt>
-                <dd>15×14</dd>
-                <dt>Master Bedroom</dt>
-                <dd>23×14</dd>
-                <dt>Bedroom 2</dt>
-                <dd>2×11</dd>
-            </dl>
         </div>
     </div>
 </div>
@@ -432,7 +319,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script>
 <script src="js/google-maps.js"></script>
 
-<script type="text/javascript" src="js/pages/index-detailed.js"></script>
+<script type="text/javascript" src="js/pages/property.js"></script>
 
 </body>
 </html>

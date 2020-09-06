@@ -25,8 +25,8 @@
 <body>
 <header class="site-header3">
     <a href="index-detailed.html" class="h-logo overlay">
-        <div class="h-logo-inner">
-            <img src="img/logo-light.png" alt="Powerful Real Estate Theme">
+        <div class="h-logo-inner" style="background-color: white;">
+            <img src="img/logo_Shweaain_Final.png" alt="Powerful Real Estate Theme" style="height: 90px;">
         </div>
     </a>
     <nav class="submenu1 mainmenu3">
@@ -217,13 +217,12 @@
                                 <span class="search2-label-ico"><!--   NO SPACE --><img src="img/ico-floor.png" alt=""><!-- NO SPACE --></span>
                                 Sort By
                             </label>
-                            <select class="chosen-select">
+                            <select class="chosen-select" id="sort-by">
                                 <option value="">Default Order</option>
                                 <option value="Name">Name</option>
                                 <option value="Rating" >Rating</option>
                                 <option value="Price">Price</option>
                                 <option value="Date">Date</option>
-                                <option value="Popularity">Popularity</option>
                             </select>
                         </div>
                         <div class="search2-col search2-price">
@@ -231,10 +230,10 @@
                                 <span class="search2-label-ico"><!--   NO SPACE --><img src="img/ico-floor.png" alt=""><!-- NO SPACE --></span>
                                 Target
                             </label>
-                            <select class="chosen-select">
+                            <select class="chosen-select" id="target">
                                 <option value="">Any</option>
                                 <option value="For Rent">For Rent</option>
-                                <option value="For House" >For Rent</option>
+                                <option value="For Sale" >For Sale</option>
                             </select>
                         </div>
                     </div>
@@ -246,6 +245,7 @@
                                 Price Range
                             </label>
                             <input
+                                    id="price-range"
                                     type="text"
                                     class="range-slider"
                                     data-min="56700"
@@ -263,6 +263,7 @@
                                 Square Feet
                             </label>
                             <input
+                                    id="square-feet"
                                     type="text"
                                     class="range-slider"
                                     data-min="70"
@@ -279,6 +280,7 @@
                                 Year Built
                             </label>
                             <input
+                                    id="year-built"
                                     type="text"
                                     class="range-slider"
                                     data-min="2010"
@@ -292,22 +294,54 @@
                     </div>
 
                     <div class="search2-features">
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Air Conditioning</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox"> <span>Microwave</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Window Coverings</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox"> <span>Lawn</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Swimming Pool</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>WiFi</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Dryer</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox"> <span>Gym</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox"> <span>TV Cable</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Laundry</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Barbeque</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Refrigerator</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Sauna</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox"> <span>Washer</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Outdoor Shower</span></label>
-                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3"><input type="checkbox" checked> <span>Outdoor Shower</span></label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="air-condition" type="checkbox" checked> <span>Air Conditioning</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="microwave" type="checkbox" > <span>Microwave</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="window-coverings" type="checkbox" checked> <span>Window Coverings</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="lawn" type="checkbox"> <span>Lawn</span>
+                        </label>
+
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="swimming-pool" type="checkbox" checked> <span>Swimming Pool</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="wifi" type="checkbox" checked> <span>WiFi</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="dryer" type="checkbox" checked> <span>Dryer</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="gym" type="checkbox"> <span>Gym</span>
+                        </label>
+
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="tv-cable" type="checkbox"> <span>TV Cable</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="laundry" type="checkbox" checked> <span>Laundry</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="barbeque" type="checkbox" checked> <span>Barbeque</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="refrigerator" type="checkbox" checked> <span>Refrigerator</span>
+                        </label>
+
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="sauna" type="checkbox" checked> <span>Sauna</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="washer" type="checkbox"> <span>Washer</span>
+                        </label>
+                        <label class="cf-xs-6 cf-sm-4 cf-lg-3 col-xs-6 col-sm-4 col-md-3">
+                            <input id="outdoor-shower" type="checkbox" checked> <span>Outdoor Shower</span>
+                        </label>
                     </div>
                 </form>
             </div>
@@ -317,7 +351,7 @@
     </div>
 
     <div class="search2-submit">
-        <input type="submit" value="Show 2342 Results">
+        <input type="submit" value="Show 2342 Results" id="btn-total-result">
     </div>
 
 </div>
@@ -328,35 +362,17 @@
         <h1 class="mainttl"><span>House <b>Offers</b></span></h1>
     </div>
 
-    <div class="row prop-grid">
+    <div class="row prop-grid" id="search-result">
         <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
             <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
+                <a href="#" class="prop-i-img">
                     <img src="http://placehold.it/362x215" alt="">
                 </a>
                 <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">Brooklyn</a>, <a href="catalog-grid.html">USA</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
+                    <p class="prop-i-loc">Brooklyn, USA</p>
                 </div>
                 <h3 class="prop-i-ttl">
-                    <a href="property.html">Apartment 21 Sqrt</a>
+                    <a href="property-2.html" onclick="setIDToSession(1);">Apartment 21 Sqrt</a>
                 </h3>
                 <ul class="prop-i-rating">
                     <li><i class="ion-android-star"></i></li>
@@ -385,185 +401,6 @@
                 <div class="prop-i-bottom">
                     <p class="prop-i-price"><span class="prop-i-price-val">$160,300</span></p>
                     <p class="prop-i-type"><a href="catalog-grid.html">For Sale</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">Rome</a>, <a href="catalog-grid.html">Italy</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property.html">Family Home 14 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>1400</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$1800</span> <span class="prop-i-price-currency">/ mo</span>
-                    </p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Rent</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">Paris</a>, <a href="catalog-grid.html">France</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property.html">Loft 13 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>1300</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$130,500</span></p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Sale</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">San Francisco</a>, <a href="catalog-grid.html">USA</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property.html">Apartment 11 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>1100</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$1300</span> <span class="prop-i-price-currency">/ mo</span>
-                    </p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Rent</a></p>
                 </div>
             </div>
         </div>
@@ -687,8 +524,6 @@
             </div>
         </div>
     </div>
-
-    <button class="prop-items-more">Show more</button>
 
 </div>
 
