@@ -15,7 +15,7 @@ function loginUser() {
   };
 
   $.ajax({
-    method: "GET",
+    method: "POST",
     url: api + "oauth/token", // "api/test",
     data: data,
     headers: {
