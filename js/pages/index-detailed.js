@@ -1,10 +1,5 @@
 $( document ).ready(function() {
-  var token = getTokenFromCache();
-  var authorization = "";
-  if (token) {
-    authorization = "Bearer " + token;
-  }
-
+  var authorization = getAuthorizationFromCache();
   if (!authorization) {
     // document.location = 'login.html';
   }
@@ -14,9 +9,13 @@ $( document ).ready(function() {
     $("#user-name").text("Hello " + userName);
     $("#alogin").hide();
     $("#alogout").show();
+    $("#auser").show();
+    $("#user-name").show();
   } else {
     $("#alogin").show();
     $("#alogout").hide();
+    $("#auser").hide();
+    $("#user-name").hide();
   }
 
   $.ajax({
@@ -50,18 +49,13 @@ $( document ).ready(function() {
 });
 
 function search() {
-  var token = getTokenFromCache();
-  var authorization = "";
-  if (token) {
-    authorization = "Bearer " + token;
-  }
+  var authorization = getAuthorizationFromCache();
 
   var city = $('#city').val(); // fairfield
   var houseType = $('#house-type').val(); // Apartment, Flat, House, Villa
   var numberOfBedRoom = $('#number-of-bed-room input[type=radio]:checked').val(); // 1 2 3 4 5
   var numberOfBathRoom = $('#number-of-bath-room input[type=radio]:checked').val(); // 1 2 3 4 5
   var numberOfFloor = $('#number-of-floor').val(); // 1 2 3 4 5
-  var sortBy = $('#sort-by').val(); // name, price
   var target = $('#target').val(); // for rent, For Sale
 
   var priceRange = $('#price-range').val(); // 278400;3500000
@@ -71,10 +65,6 @@ function search() {
   var squareFeet = $('#square-feet').val();// 3100;3300
   var squareFeetMin = squareFeet.split(";")[0];// 3100
   var squareFeetMax = squareFeet.split(";")[1];// 3300
-
-  var yearBuilt = $('#year-built').val(); //
-  var yearBuiltMin = yearBuilt.split(";")[0];//
-  var yearBuiltMax = yearBuilt.split(";")[1];//
 
   var airCondition = $("#air-condition").prop("checked"); // boolean
   var microwave = $("#microwave").prop("checked");
@@ -95,20 +85,18 @@ function search() {
   var washer = $("#washer").prop("checked");
   var outdoorShower = $("#outdoor-shower").prop("checked");
 
-  var filterData = {
+  var filterData = {//search resultu
     city: city,
     houseType: houseType,
     numberOfBedRoom: numberOfBedRoom,
     numberOfBathRoom: numberOfBathRoom,
     numberOfFloor: numberOfFloor,
-    sortBy: sortBy,
     target: target,
+
     priceMin: priceMin,
     priceMax: priceMax,
     squareFeetMin: squareFeetMin,
     squareFeetMax: squareFeetMax,
-    yearBuiltMin: yearBuiltMin,
-    yearBuiltMax: yearBuiltMax,
 
     airCondition:airCondition,
     microwave: microwave,

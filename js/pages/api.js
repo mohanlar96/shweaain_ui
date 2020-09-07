@@ -21,3 +21,11 @@ function logout() {
   localStorage.removeItem("userName");
   location.reload();
 }
+
+function getAuthorizationFromCache(){
+  var token = getTokenFromCache();
+  if (token) {
+    return "Bearer " + token;
+  }
+  return undefined;
+}

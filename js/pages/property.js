@@ -1,23 +1,22 @@
 $( document ).ready(function() {
 
-  var token = getTokenFromCache();
-  var authorization = "";
-  if (token) {
-    authorization = "Bearer " + token;
-  }
-
+  var authorization = getAuthorizationFromCache();
   if (!authorization) {
     //document.location = 'login.html';
   }
 
   var userName = getUserNameFromCache();
   if (userName) {
-    $("#user-name").text("Hello" + userName);
+    $("#user-name").text("Hello " + userName);
     $("#alogin").hide();
     $("#alogout").show();
+    $("#auser").show();
+    $("#user-name").show();
   } else {
     $("#alogin").show();
     $("#alogout").hide();
+    $("#auser").hide();
+    $("#user-name").hide();
   }
 
   //Updated on May 29, 2017 at 3:42 pm

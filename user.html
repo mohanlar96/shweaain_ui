@@ -32,7 +32,7 @@
     </a>
     <nav class="submenu1 mainmenu3">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index-detailed.html">Home</a>
             </li>
             <li>
@@ -40,10 +40,11 @@
             </li>
             <li>
             </li>
-            <li>
+            <li class="active">
+                <a id='auser' href="user.html">User</a>
             </li>
             <li>
-                <span id="user-name" style="color: forestgreen;"></span>
+                <a id="user-name" style="color: forestgreen;"></a>
             </li>
             <li>
                 <a id="alogin" href="login.html">Login</a>
@@ -193,64 +194,51 @@
                                 Target
                             </label>
                             <select class="chosen-select" id="target">
-                                <option value="">Any</option>
                                 <option value="For Rent">For Rent</option>
                                 <option value="For Sale" >For Sale</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="search2-advanced">
-                        <div class="search2-col search2-price">
+                        <div class="search2-col search2-price" style="width: 30%;">
                             <label class="search2-label">
                                 <span class="search2-label-ico"><!--   NO SPACE --><img src="img/ico-price.png" alt=""><!-- NO SPACE --></span>
                                 Price Range
                             </label>
                             <input
-                                    id="price-range"
-                                    type="text"
-                                    class="range-slider"
-                                    data-min="56700"
-                                    data-max="4000000"
-                                    data-from="278400"
-                                    data-to="3500000"
-                                    data-type="double"
-                                    data-grid="false"
-                                    data-prefix="$"
+                                    id="price"
+                                    type="number"
+                                    value="0"
+                                    style="width: 100%;
+                                            outline: 0;
+                                            line-height: normal;
+                                            margin: 0;
+                                            display: block;
+                                            padding: 4px 20px 4px 5px;
+                                            border: 1px solid #dadbe5;
+                                            height: 34px;
+                                            border-radius: 3px;
+                                            background: none;"
                             >
                         </div>
-                        <div class="search2-col search2-square">
+                        <div class="search2-col search2-square" style="width: 30%;">
                             <label class="search2-label">
                                 <span class="search2-label-ico"><!--   NO SPACE --><img src="img/ico-area.png" alt=""><!-- NO SPACE --></span>
                                 Square Feet
                             </label>
                             <input
                                     id="square-feet"
-                                    type="text"
-                                    class="range-slider"
-                                    data-min="70"
-                                    data-max="4400"
-                                    data-from="3100"
-                                    data-to="3300"
-                                    data-type="double"
-                                    data-grid="false"
-                            >
-                        </div>
-                        <div class="search2-col search2-year">
-                            <label class="search2-label">
-                                <span class="search2-label-ico"><!--   NO SPACE --><img src="img/ico-year.png" alt=""><!-- NO SPACE --></span>
-                                Year Built
-                            </label>
-                            <input
-                                    id="year-built"
-                                    type="text"
-                                    class="range-slider"
-                                    data-min="2010"
-                                    data-max="2017"
-                                    data-from="2014"
-                                    data-to="2017"
-                                    data-type="double"
-                                    data-grid="false"
+                                    type="number"
+                                    value="0"
+                                    style="width: 100%;
+                                            outline: 0;
+                                            line-height: normal;
+                                            margin: 0;
+                                            display: block;
+                                            padding: 4px 20px 4px 5px;
+                                            border: 1px solid #dadbe5;
+                                            height: 34px;
+                                            border-radius: 3px;
+                                            background: none;"
                             >
                         </div>
                     </div>
@@ -306,6 +294,13 @@
                         </label>
                     </div>
                 </form>
+                <button type="button"
+                        class="btn btn-primary" onclick="uploadHouse()"
+                        style="margin-bottom: 13px;
+                                margin-left: 10px;"
+                >
+                    Upload information
+                </button>
             </div>
         </div>
 

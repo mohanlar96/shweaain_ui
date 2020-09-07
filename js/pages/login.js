@@ -24,16 +24,14 @@ function loginUser() {
   }).done(function( response ) {
     if(!response){
       alert("Login is not success");
+      return;
     }
-
-
     var token = response.access_token;
     if (token) {
       insertTokenToCache(token);
     }
     getUserName();
 
-    // document.location = 'user.html';
   });
 }
 
@@ -43,10 +41,11 @@ function getUserName() {
     method: "GET",
     url: api + "api/user",
     headers: {
-      'Accept': 'application/json',
-       "Authorization": "Bearer " + token
+      'Accept': 'application/json'
+       // "Authorization": "Bearer " + token
     },
   }).done(function( response ) {
     insertUserNameToCache(response.user.name);
+    document.location = 'index-detailed.html';
   });
 }
