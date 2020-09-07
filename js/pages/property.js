@@ -7,7 +7,7 @@ $( document ).ready(function() {
   }
 
   if (!authorization) {
-    document.location = 'login.html';
+    //document.location = 'login.html';
   }
 
   //Updated on May 29, 2017 at 3:42 pm
@@ -26,7 +26,8 @@ $( document ).ready(function() {
   $.ajax({
     method: "GET",
     url: api + "house",
-    headers: {"Accept":"application/json", "Authorization": authorization}
+    data: {homeId: id},
+    headers: {"Accept":"application/json"}
   }).done(function( house ) {
     if (!house) {
 

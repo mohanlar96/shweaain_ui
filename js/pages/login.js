@@ -16,17 +16,19 @@ function loginUser() {
 
   $.ajax({
     method: "GET",
-    url: api + "api/test", // "oauth/token", //"api/test",
+    url: api + "oauth/token", // "api/test",
     data: data,
     headers: {
-      "Accept": "application/json"
-    }
+      'Accept': 'application/json'
+    },
   }).done(function( response ) {
     if(!response){
       alert("Login is not success");
     }
     var token = response.access_token;
-    insertTokenToCache(token);
+    if (token) {
+      insertTokenToCache(token);
+    }
 
     document.location = 'index-detailed.html';
   });

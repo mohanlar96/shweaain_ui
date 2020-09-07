@@ -6,63 +6,30 @@ $( document ).ready(function() {
   }
 
   if (!authorization) {
-    document.location = 'login.html';
+    // document.location = 'login.html';
   }
 
   $.ajax({
     method: "GET",
-    url: api + "rating/total",
-    headers: {"Accept":"application/json", "Authorization": authorization}
+    url: api + "/all/info",
+    headers: {"Accept":"application/json"}
   }).done(function( data ) {
-    $( "#total-rating" ).html( data );
-  });
+    $( "#total-rating" ).html( data.totalRating );
+    $( "#total-house" ).html( data.totalHouse );
+    $( "#total-client" ).html( data.totalClient );
+    $( "#total-transaction" ).html( data.totalTransaction );
 
-  $.ajax({
-    method: "GET",
-    url: api + "house/total",
-    headers: {"Accept":"application/json", "Authorization": authorization}
-  }).done(function( data ) {
-    $( "#total-house" ).html( data );
-  });
-
-  $.ajax({
-    method: "GET",
-    url: api + "client/total",
-    headers: {"Accept":"application/json", "Authorization": authorization}
-  }).done(function( data ) {
-    $( "#total-client" ).html( data );
-  });
-
-  $.ajax({
-    method: "GET",
-    url: api + "transaction/total",
-    headers: {"Accept":"application/json", "Authorization": authorization}
-  }).done(function( data ) {
-    $( "#total-transaction" ).html( data );
-  });
-
-  $.ajax({
-    method: "GET",
-    url: api + "city",
-    headers: {"Accept":"application/json", "Authorization": authorization}
-  }).done(function( data ) {
     $("#city").html("<option value='0'>All</option>")
-    if (data) {
-      data.forEach(function(city) {
+    if (data && data.cities) {
+      data.cities.forEach(function(city) {
         $("#city").append($("<option value='" + city.id + "'>" + city.name + "</option>"));
       });
       $('#city').trigger("chosen:updated");
     }
-  });
 
-  $.ajax({
-    method: "GET",
-    url: api + "apartment",
-    headers: {"Accept":"application/json", "Authorization": authorization}
-  }).done(function( data ) {
     $("#house-type").html("<option value='0'>All</option>")
-    if (data) {
-      data.forEach(function(houseType) {
+    if (data && data.homeTypes) {
+      data.homeTypes.forEach(function(houseType) {
         $("#house-type").append($("<option value='" + houseType.id + "'>" + houseType.name + "</option>"));
       });
       $('#house-type').trigger("chosen:updated");
@@ -70,7 +37,6 @@ $( document ).ready(function() {
   });
 
   search();
-
 });
 
 function search() {
