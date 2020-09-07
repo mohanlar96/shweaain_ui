@@ -25,11 +25,28 @@ function loginUser() {
     if(!response){
       alert("Login is not success");
     }
+
+
     var token = response.access_token;
     if (token) {
       insertTokenToCache(token);
     }
+    getUserName();
 
-    document.location = 'index-detailed.html';
+    // document.location = 'user.html';
+  });
+}
+
+function getUserName() {
+  var token = getTokenFromCache();
+  $.ajax({
+    method: "GET",
+    url: api + "api/user",
+    headers: {
+      'Accept': 'application/json',
+       "Authorization": "Bearer " + token
+    },
+  }).done(function( response ) {
+    insertUserNameToCache(response.user.name);
   });
 }

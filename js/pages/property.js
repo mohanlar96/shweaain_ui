@@ -10,6 +10,16 @@ $( document ).ready(function() {
     //document.location = 'login.html';
   }
 
+  var userName = getUserNameFromCache();
+  if (userName) {
+    $("#user-name").text("Hello" + userName);
+    $("#alogin").hide();
+    $("#alogout").show();
+  } else {
+    $("#alogin").show();
+    $("#alogout").hide();
+  }
+
   //Updated on May 29, 2017 at 3:42 pm
   var monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"

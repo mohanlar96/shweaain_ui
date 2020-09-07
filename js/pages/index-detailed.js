@@ -9,6 +9,16 @@ $( document ).ready(function() {
     // document.location = 'login.html';
   }
 
+  var userName = getUserNameFromCache();
+  if (userName) {
+    $("#user-name").text("Hello " + userName);
+    $("#alogin").hide();
+    $("#alogout").show();
+  } else {
+    $("#alogin").show();
+    $("#alogout").hide();
+  }
+
   $.ajax({
     method: "GET",
     url: api + "/all/info",
