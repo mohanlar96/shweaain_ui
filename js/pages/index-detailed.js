@@ -20,26 +20,26 @@ $( document ).ready(function() {
 
   $.ajax({
     method: "GET",
-    url: api + "/all/info",
+    url: api + "api/home",
     headers: {"Accept":"application/json"}
   }).done(function( data ) {
-    $( "#total-rating" ).html( data.totalRating );
-    $( "#total-house" ).html( data.totalHouse );
-    $( "#total-client" ).html( data.totalClient );
-    $( "#total-transaction" ).html( data.totalTransaction );
+    $( "#total-rating" ).html( data.TotalRating );
+    $( "#total-house" ).html( data.TotalHouse );
+    $( "#total-client" ).html( data.TotalClient );
+    $( "#total-transaction" ).html( data.TotalTransaction );
 
     $("#city").html("<option value='0'>All</option>")
-    if (data && data.cities) {
-      data.cities.forEach(function(city) {
-        $("#city").append($("<option value='" + city.id + "'>" + city.name + "</option>"));
+    if (data && data.Township) {
+      data.Township.forEach(function(city) {
+        $("#city").append($("<option value='" + city.id + "'>" + city.name_en + "</option>"));
       });
       $('#city').trigger("chosen:updated");
     }
 
     $("#house-type").html("<option value='0'>All</option>")
-    if (data && data.homeTypes) {
-      data.homeTypes.forEach(function(houseType) {
-        $("#house-type").append($("<option value='" + houseType.id + "'>" + houseType.name + "</option>"));
+    if (data && data.ApartmentType) {
+      data.ApartmentType.forEach(function(houseType) {
+        $("#house-type").append($("<option value='" + houseType.id + "'>" + houseType.name_en + "</option>"));
       });
       $('#house-type').trigger("chosen:updated");
     }
@@ -120,16 +120,16 @@ function search() {
 
   $.ajax({
     method: "GET",
-    url: api + "house/search",
+    url: api + "api/home/search",
     data: filterData,
-    headers: {"Accept":"application/json", "Authorization": authorization}
+    headers: {"Accept":"application/json"}
   }).done(function (data) {
 
-    if (data) {
+    if (data && data.apartments) {
 
-      $("#btn-total-result").val("Show " + data.length + " Results");
-
-      data.forEach(function(house) {
+      $("#btn-total-result").val("Show " + data.apartments.length + " Results");
+      $("#search-result").html("");
+      data.apartments.forEach(function(house) {
 
         if (!house) {
           return;
@@ -143,13 +143,13 @@ function search() {
         var htmlResponse = '<div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">\n' +
             '            <div class="prop-i">\n' +
             '                <a href="#" class="prop-i-img">\n' +
-            '                    <img src="' + house.imageUrl + '" alt="">\n' +
+            '                    <img src="' + house.images.imageUrl + '" alt="">\n' +
             '                </a>\n' +
             '                <div class="prop-i-top">\n' +
-            '                    <p class="prop-i-loc">' + house.city.name + '</p>\n' +
+            '                    <p class="prop-i-loc">' + house.township.name_en + '</p>\n' +
             '                </div>\n' +
             '                <h3 class="prop-i-ttl">\n' +
-            '                    <a href="property-2.html" onclick="setIDToSession(' + house.id + ');">' + house.houseType + ' ' + house.squareFeet + ' Sqrt</a>\n' +
+            '                    <a href="property-2.html" onclick="setIDToSession(' + house.id + ');">' + house.title_en + '</a>\n' +
             '                </h3>\n' +
             '                <ul class="prop-i-rating">\n' + ratingStart +
             '                </ul>\n' +
@@ -158,12 +158,12 @@ function search() {
             '                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>\n' +
             '                        Square Feet\n' +
             '                    </dt>\n' +
-            '                    <dd>'+ house.squareFeet + '</dd>\n' +
+            '                    <dd>'+ house.area + '</dd>\n' +
             '                    <dt>\n' +
             '                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>\n' +
             '                        Bedrooms\n' +
             '                    </dt>\n' +
-            '                    <dd>' + house.numberOfBedRoom + '</dd>\n' +
+            '                    <dd>' + house.number_of_rooms + '</dd>\n' +
             '                    <dt>\n' +
             '                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>\n' +
             '                        Guests\n' +
@@ -172,7 +172,7 @@ function search() {
             '                </dl>\n' +
             '                <div class="prop-i-bottom">\n' +
             '                    <p class="prop-i-price"><span class="prop-i-price-val">$' + house.price + '</span></p>\n' +
-            '                    <p class="prop-i-type">' + house.target + '</p>\n' +
+            '                    <p class="prop-i-type">' + house.business_type.name_en + '</p>\n' +
             '                </div>\n' +
             '            </div>\n' +
             '        </div>';

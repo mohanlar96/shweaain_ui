@@ -34,38 +34,72 @@ $( document ).ready(function() {
 
   $.ajax({
     method: "GET",
-    url: api + "house",
-    data: {homeId: id},
+    url: api + "api/property" + "/" + id,
     headers: {"Accept":"application/json"}
   }).done(function( house ) {
-    if (!house) {
+    if (house && house.apartment) {
+      var apartment = house.apartment[0];
 
-      $('#image').prop("src", house.imageUrl);
-      $('#city').text(house.city.name);
-      $('#house-type-feet').text("Comfortable " + house.houseType + ' ' + house.squareFeet + ' Sqrt'); // Comfortable Apartments 15 Sqrt
+      $('#image').prop("src", apartment.images[1]);
+      $('#city').text(apartment.address_en);
+      $('#house-type-feet').text(apartment.title_en); // Comfortable Apartments 15 Sqrt
 
       var ratingStart = "";
-      for (var i =0; i< house.rating; i++) {
+      for (var i =0; i< apartment.rating; i++) {
         ratingStart += '<li><i class="ion-android-star"></i></li>';
       }
       $("#rating-star").html(ratingStart);
 
-      $("#status").text(house.status); // rented, sold, for rent, for sale
-      $("#square-feet").text(house.squareFeet); // 1500
-      $("#number-of-bed").text(house.numberOfBedRoom); // 1
-      $("#price").text("$" + house.price); // 1500
+      $("#status").text(apartment.business_type.name_en); // rented, sold, for rent, for sale
+      $("#square-feet").text(apartment.area); // 1500
+      $("#number-of-bed").text(apartment.number_of_rooms); // 1
+      $("#price").text("$" + apartment.price); // 1500
 
-      $("#house-type").text(house.houseType); //Apartment
-      $("#number-of-bath").text(house.numberOfBathRoom);
+      $("#house-type").text(apartment.apartment_type.name_en); //Apartment
+      $("#number-of-bath").text(apartment.number_of_bathroom);
 
-      $("#price-final").text("$" + house.price-final); //$123
+      $("#price-final").text("$" + apartment.price); //$123
 
+      $("#description").text(apartment.description_en);
     }
   });
 });
 
 function getIDToSessionAndRemove() {
   var id = localStorage['houseId'];
-  localStorage.removeItem("houseId");
+  // localStorage.removeItem("houseId");
   return id;
+}
+
+function rentTheHouse() {
+  requestBusiness(1, function(msg){alert("Rent success with message:" + msg)});
+}
+
+function buyTheHouse() {
+  requestBusiness(2, function(msg){alert("Buy success with message:" + msg)});
+}
+
+function requestBusiness(businessTypeId, callBack) {
+  var apartmentId = localStorage['houseId'];
+  var userId = getUserIdFromCache();
+
+  if (!userId){
+    alert("you must login first");
+    return;
+  }
+
+  var data = {
+    userId : userId,
+    apartmentId: apartmentId,
+    businessTypeId: businessTypeId
+  };
+  $.ajax({
+    method: "GET",
+    url: api + "api/property/business",
+    data: data,
+    headers: {"Accept":"application/json"}
+  }).done(function( data ){
+
+    callBack(data.response);
+  });
 }

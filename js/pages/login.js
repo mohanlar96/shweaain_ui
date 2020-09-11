@@ -46,6 +46,7 @@ function getUserName() {
     },
   }).done(function( response ) {
     insertUserNameToCache(response.user.name);
+    insertUserIdToCache(response.user.id);
     document.location = 'index-detailed.html';
   });
 }

@@ -223,8 +223,8 @@
                             </label>
                             <select class="chosen-select" id="target">
                                 <option value="">Any</option>
-                                <option value="For Rent">For Rent</option>
-                                <option value="For Sale" >For Sale</option>
+                                <option value="1">For Rent</option>
+                                <option value="2" >For Sale</option>
                             </select>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
     </div>
 
     <div class="search2-submit">
-        <input type="submit" value="Show 2342 Results" id="btn-total-result">
+        <input type="submit" value="Show 2342 Results" id="btn-total-result" onclick="search()">
     </div>
 
 </div>
@@ -337,166 +337,7 @@
     </div>
 
     <div class="row prop-grid" id="search-result">
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="#" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc">Brooklyn, USA</p>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property-2.html" onclick="setIDToSession(1);">Apartment 21 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>2100</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$160,300</span></p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Sale</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">Copenhagen</a>, <a href="catalog-grid.html">Denmark</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property.html">Condo 21 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>2100</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$140,700</span></p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Sale</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="cf-xs-6 cf-sm-6 cf-lg-4 col-xs-6 col-sm-6 col-md-4 prop-i-col">
-            <div class="prop-i">
-                <a href="property.html" class="prop-i-img">
-                    <img src="http://placehold.it/362x215" alt="">
-                </a>
-                <div class="prop-i-top">
-                    <p class="prop-i-loc"><a href="catalog-grid.html">Ankara</a>, <a href="catalog-grid.html">Turkey</a></p>
-                    <div class="prop-i-moreinfo">
-                        <ul>
-                            <li class="prop-i-date">
-                                Published 2 month ago
-                            </li>
-                            <li>
-                                <a href="#">Add to Favorite</a>
-                            </li>
-                            <li>
-                                <a href="catalog-grid.html">Similar Properties</a>
-                            </li>
-                            <li class="prop-i-agent">
-                                <a href="agent.html" class="prop-i-agent-img"><img src="http://placehold.it/80x80" alt=""></a>
-                                <p class="prop-i-agent-type">Agent</p>
-                                <p class="prop-i-agent-name"><a href="agent.html">Mark Duncan</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="prop-i-ttl">
-                    <a href="property.html">Loft 11 Sqrt</a>
-                </h3>
-                <ul class="prop-i-rating">
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                    <li><i class="ion-android-star"></i></li>
-                </ul>
-                <dl class="prop-i-info">
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo1.png" alt=""></span>
-                        Square Feet
-                    </dt>
-                    <dd>1100</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo2.png" alt=""></span>
-                        Bedrooms
-                    </dt>
-                    <dd>3</dd>
-                    <dt>
-                        <span class="prop-i-info-icon"><img src="img/propinfo3.png" alt=""></span>
-                        Guests
-                    </dt>
-                    <dd>4</dd>
-                </dl>
-                <div class="prop-i-bottom">
-                    <p class="prop-i-price"><span class="prop-i-price-val">$1200</span> <span class="prop-i-price-currency">/ mo</span>
-                    </p>
-                    <p class="prop-i-type"><a href="catalog-grid.html">For Rent</a></p>
-                </div>
-            </div>
-        </div>
+
     </div>
 
 </div>

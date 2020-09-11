@@ -1,4 +1,4 @@
-var api = "http://10.10.14.101/shweaain_dev/public/";
+var api = "http://192.168.137.1/shweaain_dev/public/";
 
 function insertTokenToCache(token) {
   localStorage['token'] = token;
@@ -14,6 +14,14 @@ function insertUserNameToCache(userName) {
 
 function getUserNameFromCache() {
   return localStorage['userName'];
+}
+
+function insertUserIdToCache(userId) {
+  localStorage['userId'] = userId;
+}
+
+function getUserIdFromCache() {
+  return localStorage['userId'];
 }
 
 function logout() {
