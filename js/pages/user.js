@@ -59,24 +59,71 @@ function uploadHouse () {
   var price = $('#price').val();
   var squareFeet = $('#square-feet').val();// 3100;3300
 
+  var features = [];
   var airCondition = $("#air-condition").prop("checked"); // boolean
+  if (airCondition){
+    features.push(1);
+  }
+
   var microwave = $("#microwave").prop("checked");
+  if (microwave){
+    features.push(2);
+  }
   var windowCoverings = $("#window-coverings").prop("checked");
+  if (windowCoverings){
+    features.push(3);
+  }
   var lawn = $("#lawn").prop("checked");
+  if (lawn){
+    features.push(4);
+  }
 
   var swimmingPool = $("#swimming-pool").prop("checked");
+  if (swimmingPool){
+    features.push(5);
+  }
   var wifi = $("#wifi").prop("checked");
+  if (wifi){
+    features.push(6);
+  }
   var dryer = $("#dryer").prop("checked");
+  if (dryer){
+    features.push(7);
+  }
   var gym = $("#gym").prop("checked");
+  if (gym){
+    features.push(8);
+  }
 
   var tvCable = $("#tv-cable").prop("checked");
+  if (tvCable){
+    features.push(9);
+  }
   var laundry = $("#laundry").prop("checked");
+  if (laundry){
+    features.push(10);
+  }
   var barbeque = $("#barbeque").prop("checked");
+  if (barbeque){
+    features.push(11);
+  }
   var refrigerator = $("#refrigerator").prop("checked");
+  if (refrigerator){
+    features.push(12);
+  }
 
   var sauna = $("#sauna").prop("checked");
+  if (sauna){
+    features.push(13);
+  }
   var washer = $("#washer").prop("checked");
+  if (washer){
+    features.push(14);
+  }
   var outdoorShower = $("#outdoor-shower").prop("checked");
+  if (outdoorShower){
+    features.push(15);
+  }
 
   var data = {
     city: city,
@@ -89,24 +136,26 @@ function uploadHouse () {
     price: price,
     squareFeet: squareFeet,
 
-    airCondition:airCondition,
-    microwave: microwave,
-    windowCoverings: windowCoverings,
-    lawn: lawn,
+    features: features
 
-    swimmingPool: swimmingPool,
-    wifi: wifi,
-    dryer: dryer,
-    gym: gym,
-
-    tvCable: tvCable,
-    laundry: laundry,
-    barbeque: barbeque,
-    refrigerator: refrigerator,
-
-    sauna: sauna,
-    washer: washer,
-    outdoorShower: outdoorShower
+    // airCondition:airCondition,
+    // microwave: microwave,
+    // windowCoverings: windowCoverings,
+    // lawn: lawn,
+    //
+    // swimmingPool: swimmingPool,
+    // wifi: wifi,
+    // dryer: dryer,
+    // gym: gym,
+    //
+    // tvCable: tvCable,
+    // laundry: laundry,
+    // barbeque: barbeque,
+    // refrigerator: refrigerator,
+    //
+    // sauna: sauna,
+    // washer: washer,
+    // outdoorShower: outdoorShower
   }
 
   $.ajax({
